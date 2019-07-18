@@ -49,7 +49,7 @@ router.get("/items", auth, async (req, res) => {
         options
       })
       .execPopulate();
-    res.status(200).send(req.user.items, { poruka: "munem" });
+    res.status(200).send(req.user.items);
   } catch (e) {
     res.status(500).send(e);
   }
