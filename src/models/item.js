@@ -17,6 +17,12 @@ const itemSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User"
+    },
+    hashtag: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true
     }
   },
   {
