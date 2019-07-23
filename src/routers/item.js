@@ -75,7 +75,6 @@ router.get("/items", auth, async (req, res) => {
 
     if (req.query.filter) {
       const parts = req.query.filter.split("_");
-      console.log(parts[2]);
       match[parts[0]] = {
         $gte: parseInt(parts[1]),
         $lte: parts[2] === undefined ? 100000000000 : parseInt(parts[2])
