@@ -5,8 +5,6 @@ const {
   userOneId,
   userOne,
   setupDatabaseItems,
-  userTwo,
-  itemFour,
   itemFourId,
   itemThree
 } = require("./fixtures/db");
