@@ -32,9 +32,10 @@ const userTwo = {
 const itemOneId = new mongoose.Types.ObjectId();
 const itemTwoId = new mongoose.Types.ObjectId();
 const itemThreeId = new mongoose.Types.ObjectId();
+const itemFourId = new mongoose.Types.ObjectId();
 const itemOne = {
   _id: itemOneId,
-  itemName: "itemOne - UserOne",
+  itemName: "A-itemOne - UserOne",
   price: 370,
   hashtag: "food",
   owner: userOne._id
@@ -42,9 +43,17 @@ const itemOne = {
 
 const itemTwo = {
   _id: itemTwoId,
-  itemName: "ItemTwo - UserOne",
+  itemName: "B-ItemTwo - UserOne",
   price: 320,
   hashtag: "food",
+  owner: userOne._id
+};
+
+const itemFour = {
+  _id: itemFourId,
+  itemName: "A-ItemThree - UserOne",
+  price: 390,
+  hashtag: "drinks",
   owner: userOne._id
 };
 
@@ -71,6 +80,7 @@ const setupDatabaseItems = async () => {
   await new Item(itemOne).save();
   await new Item(itemTwo).save();
   await new Item(itemThree).save();
+  await new Item(itemFour).save();
 };
 
 module.exports = {
@@ -84,6 +94,8 @@ module.exports = {
   itemOneId,
   itemTwoId,
   itemThreeId,
+  itemFour,
+  itemFourId,
   setupDatabaseUsers,
   setupDatabaseItems
 };
